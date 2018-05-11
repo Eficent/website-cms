@@ -3,15 +3,15 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'CMS Form Products',
+    'name': 'CMS Form MRP Boms',
     'summary': """
-        Search forms for products""",
+        Search forms for MRP Boms""",
     'version': '11.0.1.0.0',
     'license': 'AGPL-3',
     'author': 'Eficent, '
               'Odoo Community Association (OCA)',
     'depends': [
-        'website_product',
+        'website_mrp_bom',
         'cms_form',
     ],
     'installable': True,

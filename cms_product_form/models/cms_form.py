@@ -2,22 +2,7 @@
 #   (http://www.eficent.com)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models
-from odoo.addons.http_routing.models.ir_http import slug
-
-
-class ProductTemplate(models.Model):
-    _inherit = 'product.template'
-
-    @api.multi
-    def _compute_website_url(self):
-        super(ProductTemplate, self)._compute_website_url()
-        for product in self:
-            # If the product cannot be sold, then use the new form view.
-            # Otherwise, use the defult URL from website_sale, which will
-            # redirect the user to the shop.
-            if not product.sale_ok:
-                product.website_url = "/product/%s" % slug(product)
+from odoo import fields, models
 
 
 class ProductsFormSearch(models.AbstractModel):
@@ -40,12 +25,3 @@ class ProductsFormSearch(models.AbstractModel):
             ]
             domain.extend(default_domain)
         return domain
-
-
-class ProductsForm(models.AbstractModel):
-
-    _name = 'cms.form.product.template'
-    _inherit = 'cms.form'
-    _form_model = 'product.template'
-    _form_model_fields = ('name', )
-    _form_required_fields = ('name', )
