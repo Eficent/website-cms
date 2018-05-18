@@ -14,5 +14,8 @@
         'website_product',
         'cms_form',
     ],
+    'data': [
+        'security/ir.model.access.csv'
+    ],
     'installable': True,
 }

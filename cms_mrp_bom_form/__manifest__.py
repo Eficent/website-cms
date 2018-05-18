@@ -14,5 +14,11 @@
         'website_mrp_bom',
         'cms_form',
     ],
+    "data": [
+        "data/product_category_demo.xml",
+        "data/product_product_demo.xml",
+        "data/mrp_bom_demo.xml",
+        'security/ir.model.access.csv'
+    ],
     'installable': True,
 }

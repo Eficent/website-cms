@@ -13,7 +13,7 @@ class ProductsFormSearch(models.AbstractModel):
     _form_model_fields = ('name', )
     _form_required_fields = ('name', )
 
-    default_code = fields.Char()
+    # default_code = fields.Char()
 
     def form_search_domain(self, search_values):
         domain = super().form_search_domain(search_values)
